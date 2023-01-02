@@ -26,6 +26,12 @@ alias nis='npm install --save'
 alias ni='npm install'
 alias ns='npm start'
 
+#gum
+alias gul='gum list'
+alias gu='gum use'
+alias gdel='gum delete'
+
+
 #Functions
 
 ##SqlCmd
