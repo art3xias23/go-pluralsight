@@ -1,12 +1,14 @@
 " Maintainer:	Konstantin Milchev <konstantin.milchev@gmail.com>
-" Last change:	2022 November 4  
+" Last change:	2023 January 4  
 set nocompatible
 filetype off
 
 "Defaults to ~/vimrc/plugged
 call plug#begin()
 
+
 Plug 'https://github.com/preservim/nerdtree.git'
+Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/dhruvasagar/vim-table-mode.git'
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
