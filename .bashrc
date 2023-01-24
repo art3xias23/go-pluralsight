@@ -10,6 +10,8 @@ alias gfo='git fetch origin'
 alias gs='git status'
 alias gl='git log'
 alias gwl='git worktree list'
+alias gap='git add -p'
+alias gcmer='git branch --sort=-committerdate | head -10'
 #MSBuild
 alias msbuild='msbuild.exe'
 #Nuget
@@ -29,6 +31,7 @@ alias ns='npm start'
 #gum
 alias gul='gum list'
 alias gu='gum use'
+alias gup='gum use personal'
 alias gdel='gum delete'
 
 
