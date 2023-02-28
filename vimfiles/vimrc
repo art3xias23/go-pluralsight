@@ -12,6 +12,8 @@ Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/dhruvasagar/vim-table-mode.git'
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
