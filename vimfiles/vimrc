@@ -1,5 +1,12 @@
 " Maintainer:	Konstantin Milchev <konstantin.milchev@gmail.com>
-" Last change:	2023 January 4  
+" Last change:	2023 March 1  
+
+"Greet
+"echo "Just use now, configure later (>^.^<)"
+
+"The space between the left numbers and the left boarder
+set numberwidth=4
+
 set nocompatible
 filetype off
 
@@ -14,6 +21,8 @@ Plug 'https://github.com/dhruvasagar/vim-table-mode.git'
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
+Plug 'vim-alias/cmdalias.vim'
+Plug 'https://github.com/Konfekt/vim-alias.git'
 
 call plug#end()
 
@@ -86,6 +95,8 @@ colorscheme gruvbox
 ino <esc> <nop>
 ino jk <esc>:w<cr>
 ino kj <esc>:w<cr>
+vmap jk <esc> <cr> 
+vmap kj <esc> <cr> 
 
 
 " Functions 
