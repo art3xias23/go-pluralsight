@@ -101,3 +101,6 @@ function CheckRPAAPP
 #Refresh bashrc
 
 [ -f "/c/Users/kmilchev/bin/win-sudo/s/path.sh" ] && source "/c/Users/kmilchev/bin/win-sudo/s/path.sh"
+
+
+shopt -s cdspell

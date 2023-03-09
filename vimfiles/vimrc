@@ -1,8 +1,8 @@
 " Maintainer:	Konstantin Milchev <konstantin.milchev@gmail.com>
-" Last change:	2023 March 1  
+" Last change:	2023 March 7
 
 "Greet
-"echo "Just use now, configure later (>^.^<)"
+"echo "Use now, configure later (>^.^<)"
 
 "The space between the left numbers and the left boarder
 set numberwidth=4
@@ -32,20 +32,49 @@ set nomore
 set noswapfile
 
 " set vim font
-"set guifont=Consolas:h10 (Stopped using November 2022)
 set guifont=Roboto_Mono_Light:h16:W300:cANSI:qDRAFT
 
 " set window size 
 set lines=35 columns=125
 
-" set window size 
+" set window position
 winpos 1250 700
-
-" set noundo filetype
-"set noundofile
 
 " syntax 
 syntax on
+
+
+" NERDTree
+autocmd vimenter * NERDTree
+nmap <leader>nt :NERDTreeToggle<CR>
+
+set colorcolumn=160 number
+
+" Color Scheme
+colorscheme gruvbox
+
+
+""Mappings
+
+
+" use jk and kj to save a file in insert mode
+ino jk <esc>:w<cr>
+ino kj <esc>:w<cr>
+
+" Unmap esc in insert mode
+ino <esc> <nop>
+
+"map leader
+let mapleader = ","
+
+"Open vimrc in normal mode with leader ev
+nnoremap <leader>ev :split $MYVIMRC<cr>
+
+"Refresh vimrc in normal mode with leader sv
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+map <leader>t :term ++close<cr>
+
 
 " Buffers
 "Move to the previous buffer with "gp"
@@ -55,48 +84,16 @@ nnoremap gn :bn<CR>
 " List all possible buffers with "gl"
 nnoremap gl :ls<CR>
 " List all possible buffers with "gb" and accept a new buffer argument [1]
+
 nnoremap gb :ls<CR>:b
-" Unbind Escape Key in insert mode. Bind 'jk' or 'kj'.
 
-" Mappings
+""Abbreviations
 
-" non-compatible mode
-"set nocp
-
-" NERDTree
-" autocmd vimenter * NERDTree
-nmap <F6> :NERDTreeToggle<CR>
-
-"filetype plugin on
-"Uncomment to override defaults:
-"let g:instant_markdown_open_to_the_world = 1
-"let g:instant_markdown_slow = 1
-let g:instant_markdown_autostart = 1
-"let g:instant_markdown_allow_unsafe_content = 1
-"let g:instant_markdown_allow_external_content = 0
-"let g:instant_markdown_mathjax = 1
-"let g:instant_markdown_mermaid = 1
-"let g:instant_markdown_logfile ='~\vimfiles\logs\instant-markdown.log' 
-"let g:instant_markdown_autoscroll = 0
-"let g:instant_markdown_port = 8090
-"let g:instant_markdown_python = 1
-"
-set colorcolumn=160 number
-
- "Example: To display images automatically on buffer write.
-" let vim_markdown_preview_toggle=2
-" let vim_markdown_preview_browser='Google Chrome'
-
-" Color Scheme
-colorscheme gruvbox
+iabbrev <leader>l $"{nameof(this.Name)} - {nameof(RemoveObjective)}:"
+iabbrev esle else
 
 
-"Mappings
-ino <esc> <nop>
-ino jk <esc>:w<cr>
-ino kj <esc>:w<cr>
-vmap jk <esc> <cr> 
-vmap kj <esc> <cr> 
+""Commands
+set shell=C:\Users\kmilchev\AppData\Local\Microsoft\WindowsApps\Microsoft.WindowsTerminal_8wekyb3d8bbwe\wt.exe
 
-
-" Functions 
+"set shell=C:\Users\kmilchev\AppData\Local\Programs\Git\git-bash.exe
