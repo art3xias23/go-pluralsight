@@ -21,8 +21,7 @@ Plug 'https://github.com/dhruvasagar/vim-table-mode.git'
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
-Plug 'vim-alias/cmdalias.vim'
-Plug 'https://github.com/Konfekt/vim-alias.git'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 
@@ -48,10 +47,16 @@ syntax on
 autocmd vimenter * NERDTree
 nmap <leader>nt :NERDTreeToggle<CR>
 
-set colorcolumn=160 number
+" Artistic Style 
+autocmd BufNewFile,BufRead *.cs set formatprg=astyle\ -A1Txe 
+
+" On entering a buffer change the working directory to the file where it's
+" located
+autocmd BufEnter * silent! lcd %:p:h
 
 " Color Scheme
 colorscheme gruvbox
+set colorcolumn=160 number
 
 
 ""Mappings
@@ -61,7 +66,7 @@ colorscheme gruvbox
 ino jk <esc>:w<cr>
 ino kj <esc>:w<cr>
 
-" Unmap esc in insert mode
+" Unmap esc in insert mode, nop is no operation
 ino <esc> <nop>
 
 "map leader
@@ -73,8 +78,10 @@ nnoremap <leader>ev :split $MYVIMRC<cr>
 "Refresh vimrc in normal mode with leader sv
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-map <leader>t :term ++close<cr>
+map <leader>te :term ++close<cr>
+map / /\c
 
+nno ls :FZF <CR>
 
 " Buffers
 "Move to the previous buffer with "gp"
@@ -89,11 +96,10 @@ nnoremap gb :ls<CR>:b
 
 ""Abbreviations
 
-iabbrev <leader>l $"{nameof(this.Name)} - {nameof(RemoveObjective)}:"
 iabbrev esle else
 
-
 ""Commands
-set shell=C:\Users\kmilchev\AppData\Local\Microsoft\WindowsApps\Microsoft.WindowsTerminal_8wekyb3d8bbwe\wt.exe
+:command Gr cd ~/source/repos/
+"Command-T
+ let g:CommandTPreferredImplementation='ruby'
 
-"set shell=C:\Users\kmilchev\AppData\Local\Programs\Git\git-bash.exe
