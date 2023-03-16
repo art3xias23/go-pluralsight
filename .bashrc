@@ -1,3 +1,5 @@
+#zsh config
+
 #Aliases
 #Git
 alias ga='git add'

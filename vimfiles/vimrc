@@ -61,7 +61,13 @@ set colorcolumn=160 number
 
 ""Mappings
 
+" operator mapping replacing p with i( which stands for 'change inside
+" paranthesis'
+"useful with cp or dp mappings
+ono p i(
 
+nno ne :ta<cr>
+nno pr :po<cr>
 " use jk and kj to save a file in insert mode
 ino jk <esc>:w<cr>
 ino kj <esc>:w<cr>
@@ -80,8 +86,11 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 map <leader>te :term ++close<cr>
 map / /\c
+map ? ?\c
 
-nno ls :FZF <CR>
+nno fd :FZF ~/source/repos/ <CR>
+nno fc :FZF <CR>
+nno fh :FZF ~ <CR>
 
 " Buffers
 "Move to the previous buffer with "gp"
@@ -100,6 +109,12 @@ iabbrev esle else
 
 ""Commands
 :command Gr cd ~/source/repos/
-"Command-T
- let g:CommandTPreferredImplementation='ruby'
 
+
+"Shell
+set shell=C:\Users\kmilchev\AppData\Local\Programs\Git\bin\bash.exe
+if has("win32")
+    set shellpipe=|
+    set shellredir=>
+    set shellcmdflag=
+endif
