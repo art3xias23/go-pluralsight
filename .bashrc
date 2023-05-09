@@ -14,17 +14,23 @@ alias gl='git log'
 alias gwl='git worktree list'
 alias gap='git add -p'
 alias gcmer='git branch --sort=-committerdate | head -10'
+alias lua='lua54'
+
 #MSBuild
 alias msbuild='msbuild.exe'
+
 #Nuget
 alias nuget='nuget.exe'
+
 #Random
 alias python39='C:\\Users\\kmilchev\\AppData\\Local\\Programs\\Python\\Python39\\python.exe'
 alias refreshbash='. ~kmilchev/.bashrc'
+
 #Python
 alias mssql-cli='python39 -m mssqlcli.main'
 alias goog='python39 C:\\ProgramData\\chocolatey\\lib\\googler\\tools\\googler\\googler.py'
 alias googler='LC_ALL="en_GB.UTF-8" goog'
+
 #NPM
 alias nis='npm install --save'
 alias ni='npm install'
@@ -33,11 +39,16 @@ alias ns='npm start'
 #gum
 alias gul='gum list'
 alias gu='gum use'
-alias gup='gum use personal'
+alias guw='gum use Work'
+alias gup='gum use Play'
 alias gdel='gum delete'
+
+#Exercism
+alias es='exercism submit'
 
 
 #Functions
+dbusted() { docker run --rm -t -v "/$@":/data imega/busted; }
 
 ##SqlCmd
 function tsql

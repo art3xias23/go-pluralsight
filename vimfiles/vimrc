@@ -293,6 +293,7 @@ iabbrev esle else
 command Gr cd ~/source/repos/
 command T NERDTreeToggle
 command Ms cd ~/Desktop/MyStuff/ 
+command Lua cd ~/Exercism/lua/
  "}}}
 
 " Shell {{{
