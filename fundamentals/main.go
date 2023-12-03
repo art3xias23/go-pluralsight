@@ -36,7 +36,8 @@ func (mi menuItem) Print() string {
 }
 
 func main() {
-	// printSomeValues()
+	// printSlice()
 	// printVarAndFunc()
-	printSlice()
+	// printSlice()
+	passByReference()
 }

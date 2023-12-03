@@ -10,8 +10,7 @@ func printVars() {
 	var a = 10
 	var b = a
 
-	fmt.Printf("a:%p", &a)
-	fmt.Printf("b:%p", &b)
+	fmt.Printf("a:%p\nb:%p", &a, &b)
 }
 func printFunc() {
 
@@ -34,11 +33,39 @@ func printSlice() {
 
 	b := a
 
-	c := a
-	fmt.Printf("%p", &a[0])
-	fmt.Println("\n")
-	fmt.Printf("%p", &b[0])
-	fmt.Println("\n")
-	fmt.Printf("%p", &c[0])
+	fmt.Printf("The variables have different memory allocations")
+	fmt.Print("\n")
+	fmt.Printf("a: %p", &a)
+	fmt.Print("\n")
+	fmt.Printf("b: %p", &b)
+	fmt.Print("\n")
+	fmt.Print("------------------")
+	fmt.Print("\n")
+	fmt.Print("\n")
+	fmt.Printf("The underlying structure keeps it's reference")
+	fmt.Print("\n")
+	fmt.Printf("a[0]: %p", &a[0])
+	fmt.Print("\n")
+	fmt.Printf("b[0]: %p", &b[0])
+	fmt.Print("\n")
+	fmt.Print("------------------")
+	fmt.Print("\n")
+	fmt.Print("\n")
+	fmt.Printf("Confirming they hold the same values")
+	fmt.Print("\n")
+	fmt.Printf("a: %v", a)
+	fmt.Print("\n")
+	fmt.Printf("b: %v", b)
 
+}
+
+func passByReference() {
+	var a = 5
+
+	fmt.Printf("a: %p", &a)
+	fmt.Print("\n")
+	passByReferenceFunc(&a)
+}
+func passByReferenceFunc(a *int) {
+	fmt.Printf("f: %p", a) // dereference value
 }
