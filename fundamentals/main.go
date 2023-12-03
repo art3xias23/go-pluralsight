@@ -1,4 +1,4 @@
-package fundamentals
+package main
 
 import (
 	"bytes"
@@ -36,7 +36,7 @@ func (mi menuItem) Print() string {
 }
 
 func main() {
-	var p printer
-	p = user{username: "adent", id: 14}
-	fmt.Println(p.Print())
+	// printSomeValues()
+	// printVarAndFunc()
+	printSlice()
 }
