@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	initSlice := []float64{
+	initSlice := []float32{
 		12.3,
 		40.1,
 		57.9}
@@ -17,8 +17,8 @@ func main() {
 	fmt.Println(&valueSlice[0])
 }
 
-func copy(s []float64) []float64 {
-	copy := make([]float64, len(s))
+func copy[V any](s []V) []V {
+	copy := make([]V, len(s))
 
 	for index, value := range s {
 		copy[index] = value
