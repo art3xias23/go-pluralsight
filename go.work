@@ -1,0 +1,10 @@
+go 1.21.4
+
+use (
+	.
+	./concurrency/fundamental
+	./concurrency/orderSystem
+	./fundamentals
+	./managing-go-projects/demo1
+	./managing-go-projects/embedding
+)
