@@ -34,6 +34,11 @@ func orderStatusToText(o orderStatus) string {
 
 type orderStatus int
 
+type invalidOrder struct {
+	order order
+	err   error
+}
+
 const (
 	none orderStatus = iota
 	new
