@@ -7,4 +7,5 @@ use (
 	./fundamentals
 	./managing-go-projects/demo1
 	./managing-go-projects/embedding
+	./pg
 )
